@@ -1,0 +1,8 @@
+<h1>Hour Entry</h1>
+
+<%= @hour_entry.name %><br>
+<%= @hour_entry.date.to_s(:long) %>
+<br>
+<%= link_to "Edit", edit_hour_entry_path(@hour_entry) %>
+<br>
+<%= link_to "Delete", hour_entry_path(@hour_entry), method: :delete, data: {confirm: "Are you sure?"} %>
