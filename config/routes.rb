@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to:"hour_entries#index"
+  root to: 'hour_entries#index'
 
   resources :hour_entries
 
