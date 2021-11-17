@@ -1,0 +1,22 @@
+<%= form_with model: activity_detail do |form| %>
+  <div>
+      <%= form.label :activity %><br>
+      <%= form.text_field :activity %>
+      <%= activity_detail.errors.full_messages_for(:activity).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+  </div>
+
+  <div>
+      <%= form.label :hours %><br>
+      <%= form.number_field :hours %>
+      <%= activity_detail.errors.full_messages_for(:hours).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+  </div>
+
+  <div>
+      <%= form.submit %>
+  </div>
+
+<% end %>

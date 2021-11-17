@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Activity</th>
+    <th>Hours Equivalent</th>
+  </tr>
+
+  <% activity_details.each do |activity_detail| %>
+    <tr>
+      <td><%= link_to activity_detail.activity, activity_detail%></td>
+      <td><%= activity_detail.hours %></td>
+    </tr>
+
+  <% end %>
+</table>
