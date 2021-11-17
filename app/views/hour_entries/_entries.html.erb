@@ -1,0 +1,7 @@
+<ul>
+    <% hour_entries.each do |hour_entry| %>
+            <li>
+                <%= link_to hour_entry.name + " - " + hour_entry.date.to_s(:long), hour_entry %>
+            </li>
+    <% end %>
+</ul>

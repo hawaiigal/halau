@@ -4,6 +4,5 @@ class HourEntry < ApplicationRecord
   validates :name, presence: true
   validates :date, presence: true
 
-  enum type_of_entry: [:hours_worked, hours_used]
-  enum activity: %i[halau_fees community_service uliuli_workshop keiki_hula]
+  enum type_of_entry: %i[hours_worked hours_used]
 end
