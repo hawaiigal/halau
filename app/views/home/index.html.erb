@@ -1,0 +1,10 @@
+<h1>Home#index</h1>
+
+<%= render partial: "hour_entries/entries", :locals => { :hour_entries => @hour_entries } %>
+
+<%= link_to "New Entry", new_hour_entry_path %>
+
+<br>
+
+<%= render partial: "activity_details/table", :locals => { :activity_details => @activity_details } %>
+<%= link_to "New Activity", new_activity_detail_path %>
