@@ -28,7 +28,7 @@ class HourEntriesController < ApplicationController
   def update
     @hour_entry = HourEntry.find(params[:id])
 
-    if @hour_entry.update(:hour_entry_params)
+    if @hour_entry.update(hour_entry_params)
       redirect_to @hour_entry
     else
       render :edit
