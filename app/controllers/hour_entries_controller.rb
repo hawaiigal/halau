@@ -45,6 +45,6 @@ class HourEntriesController < ApplicationController
   private
 
   def hour_entry_params
-    params.require(:hour_entry).permit(:name, :date)
+    params.require(:hour_entry).permit(:name, :date, :type_of_entry, :activity_detail_id, :hours, :minutes, :notes)
   end
 end

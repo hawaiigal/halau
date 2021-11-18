@@ -16,6 +16,46 @@
   </div>
 
   <div>
+    <%= form.label :type_of_entry %><br>
+    <%= form.select :type_of_entry, options_for_select({"Hours Worked" => "hours_worked", "Hours Used" => "hours_used"}) %>
+    <%= @hour_entry.errors.full_messages_for(:type_of_entry).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :activity_detail_id %><br>
+    <%= form.select :activity_detail_id, ActivityDetail.all.collect {|c| [c.activity, c.id]} %>
+    <%= @hour_entry.errors.full_messages_for(:activity_detail_id).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+      <%= form.label :hours %><br>
+      <%= form.number_field :hours %>
+      <%= @hour_entry.errors.full_messages_for(:hours).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+  </div>
+
+  <div>
+      <%= form.label :minutes %><br>
+      <%= form.number_field :minutes %>
+      <%= @hour_entry.errors.full_messages_for(:minutes).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+  </div>
+
+  <div>
+      <%= form.label :notes %><br>
+      <%= form.text_area :notes, cols:40, rows:5 %>
+      <%= @hour_entry.errors.full_messages_for(:notes).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+  </div>
+
+  <div>
       <%= form.submit %>
   </div>
 
