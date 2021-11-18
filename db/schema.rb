@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_16_102901) do
+ActiveRecord::Schema.define(version: 2021_11_18_083058) do
 
   create_table "activity_details", force: :cascade do |t|
     t.string "activity"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 2021_11_16_102901) do
     t.datetime "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "type_of_entry"
+    t.integer "activity_detail_id"
+    t.integer "hours"
+    t.integer "minutes"
+    t.text "notes"
+    t.index ["activity_detail_id"], name: "index_hour_entries_on_activity_detail_id"
   end
 
 end
