@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_18_092807) do
+ActiveRecord::Schema.define(version: 2021_11_19_082727) do
 
   create_table "activity_details", force: :cascade do |t|
     t.string "activity"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2021_11_18_092807) do
   end
 
   create_table "haumanas", force: :cascade do |t|
+    t.string "name"
+    t.integer "seconds_balance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -34,7 +36,10 @@ ActiveRecord::Schema.define(version: 2021_11_18_092807) do
     t.integer "hours"
     t.integer "minutes"
     t.text "notes"
+    t.integer "haumana_id"
     t.index ["activity_detail_id"], name: "index_hour_entries_on_activity_detail_id"
+    t.index ["haumana_id"], name: "index_hour_entries_on_haumana_id"
   end
 
+  add_foreign_key "hour_entries", "haumanas"
 end

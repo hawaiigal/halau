@@ -6,4 +6,5 @@ class HourEntry < ApplicationRecord
 
   enum type_of_entry: %i[hours_worked hours_used]
   belongs_to :activity_detail
+  belongs_to :haumana
 end
