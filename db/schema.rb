@@ -10,36 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_19_082727) do
-
-  create_table "activity_details", force: :cascade do |t|
-    t.string "activity"
-    t.integer "hours"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+ActiveRecord::Schema.define(version: 20_211_119_082_727) do
+  create_table 'activity_details', force: :cascade do |t|
+    t.string 'activity'
+    t.integer 'hours'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "haumanas", force: :cascade do |t|
-    t.string "name"
-    t.integer "seconds_balance"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'haumanas', force: :cascade do |t|
+    t.string 'name'
+    t.integer 'seconds_balance'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "hour_entries", force: :cascade do |t|
-    t.string "name"
-    t.datetime "date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "type_of_entry"
-    t.integer "activity_detail_id"
-    t.integer "hours"
-    t.integer "minutes"
-    t.text "notes"
-    t.integer "haumana_id"
-    t.index ["activity_detail_id"], name: "index_hour_entries_on_activity_detail_id"
-    t.index ["haumana_id"], name: "index_hour_entries_on_haumana_id"
+  create_table 'hour_entries', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'date'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.integer 'type_of_entry'
+    t.integer 'activity_detail_id'
+    t.integer 'hours'
+    t.integer 'minutes'
+    t.text 'notes'
+    t.integer 'haumana_id'
+    t.index ['activity_detail_id'], name: 'index_hour_entries_on_activity_detail_id'
+    t.index ['haumana_id'], name: 'index_hour_entries_on_haumana_id'
   end
 
-  add_foreign_key "hour_entries", "haumanas"
+  add_foreign_key 'hour_entries', 'haumanas'
 end

@@ -1,9 +1,7 @@
 class UseHaumanaInHourEntry < ActiveRecord::Migration[6.1]
   def up
     HourEntry.select(:name).group(:name).each do |hour_entry|
-      unless Haumana.exists?(name: hour_entry.name)
-        Haumana.new(name: hour_entry.name, seconds_balance: 0).save
-      end
+      Haumana.new(name: hour_entry.name, seconds_balance: 0).save unless Haumana.exists?(name: hour_entry.name)
     end
 
     change_table :hour_entries do |t|
