@@ -1,7 +1,7 @@
 <h1>Activity</h1>
 
 <%= @activity_detail.activity + " - " + @activity_detail.hours.to_s %>  
-<br>
+<br>  
 <%= link_to "Edit", edit_activity_detail_path(@activity_detail) %>
 <br>
 <%= link_to "Delete", activity_detail_path(@activity_detail), method: :delete, data: {confirm: "Are you sure?"} %>
