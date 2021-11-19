@@ -1,0 +1,2 @@
+class Haumana < ApplicationRecord
+end
