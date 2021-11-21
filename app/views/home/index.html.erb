@@ -1,10 +1,16 @@
-<h1>Home#index</h1>
+<div class="container">
+  <div class="hour_entries section">
+    <%= render partial: "hour_entries/entries", :locals => { :hour_entries => @hour_entries } %>
 
-<%= render partial: "hour_entries/entries", :locals => { :hour_entries => @hour_entries } %>
+    <%= link_to "New Entry", new_hour_entry_path %>
+  </div>
 
-<%= link_to "New Entry", new_hour_entry_path %>
+  <div class="activity_details section">
+    <%= render partial: "activity_details/table", :locals => { :activity_details => @activity_details } %>
+    <%= link_to "New Activity", new_activity_detail_path %>
+  </div>
 
-<br>
-
-<%= render partial: "activity_details/table", :locals => { :activity_details => @activity_details } %>
-<%= link_to "New Activity", new_activity_detail_path %>
+  <div class="haumana section">
+    <p>Haumana</p>
+  </div>
+</div>

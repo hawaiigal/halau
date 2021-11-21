@@ -8,9 +8,16 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('halau_logo.png') %>
   </head>
 
   <body>
+    <%= link_to root_path, class: "page_header" do %>
+      <%= image_tag("halau_logo.png", class: "header_icon") %>
+
+      <p class="header_text">Halau Hula Ka Makani Hali 'Ala o Puna</p>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
