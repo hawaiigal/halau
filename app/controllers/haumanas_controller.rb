@@ -1,0 +1,2 @@
+class HaumanasController < ApplicationController
+end
