@@ -29,6 +29,12 @@ class ActivityDetailsController < ApplicationController
 
   def update
     @activity_detail = ActivityDetail.find(params[:id])
+
+    if @activity_detail.update(activity_detail_params)
+      redirect_to @activity_detail
+    else
+      render :edit
+    end
   end
 
   def destroy
