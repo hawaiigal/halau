@@ -47,6 +47,6 @@ class ActivityDetailsController < ApplicationController
   private
 
   def activity_detail_params
-    params.require(:activity_detail).permit(:activity, :hours)
+    params.require(:activity_detail).permit(:name, :hours)
   end
 end
