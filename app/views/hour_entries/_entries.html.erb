@@ -1,7 +1,53 @@
-<ul>
+<div>
+
+</div>
+
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+
+        <th>
+            Date
+        </th>
+
+        <th>
+            Activity
+        </th>
+
+        <th>
+            Hours
+        </th>
+
+        <th>
+            Minutes
+        </th>
+    </tr>
+
     <% hour_entries.each do |hour_entry| %>
-            <li>
-                <%= link_to hour_entry.name + " - " + hour_entry.date.to_s(:long), hour_entry %>
-            </li>
+        <tr>
+            <td>
+                <%= hour_entry.haumana.name %>
+            </td>
+
+            <td>
+                <%= hour_entry.date %>
+            </td>
+
+            <td>
+                <%= hour_entry.activity_detail.name %>
+            </td>
+
+            <td>
+                <%= hour_entry.hours %>
+            </td>
+
+            <td>
+                <%= hour_entry.minutes %>
+            </td>
+        </tr>
     <% end %>
-</ul>
+
+
+</table>

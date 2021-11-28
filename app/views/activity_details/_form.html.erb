@@ -1,8 +1,8 @@
 <%= form_with model: activity_detail do |form| %>
   <div>
-      <%= form.label :activity %><br>
-      <%= form.text_field :activity %>
-      <%= activity_detail.errors.full_messages_for(:activity).each do |message| %>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+      <%= activity_detail.errors.full_messages_for(:name).each do |message| %>
           <div><%= message %></div>
       <% end %>
   </div>

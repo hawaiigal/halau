@@ -2,20 +2,20 @@
 
 <div class="container">
   <div class="hour_entries section">
-    <p class="section_title">Entries</p>
+    <p class="section_title"><%= link_to "Entries", hour_entries_path %></p>
     <%= render partial: "hour_entries/entries", :locals => { :hour_entries => @hour_entries } %>
 
     <%= button_to "New Entry", new_hour_entry_path, class: "submit", method: :get %>
   </div>
 
   <div class="activity_details section">
-    <p class="section_title">Activities</p>
+    <p class="section_title"><%= link_to "Activities", activity_details_path %></p>
     <%= render partial: "activity_details/table", :locals => { :activity_details => @activity_details } %>
     <%= button_to "New Activity", new_activity_detail_path, class: "submit", method: :get %>
   </div>
 
   <div class="haumana section">
-    <p class="section_title">Haumana</p>
+    <p class="section_title"><%= link_to "Haumana", haumanas_path %></p>
     <%= render partial: "haumanas/haumanas", :locals => {:haumanas => @haumanas} %>
     <%= button_to "New Haumana", new_haumana_path, class: "submit", method: :get %>
   </div>

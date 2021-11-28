@@ -25,7 +25,7 @@
 
   <div>
     <%= form.label :activity_detail_id %><br>
-    <%= form.select :activity_detail_id, ActivityDetail.all.collect {|c| [c.activity, c.id]} %>
+    <%= form.select :activity_detail_id, ActivityDetail.all.collect {|c| [c.name, c.id]} %>
     <%= @hour_entry.errors.full_messages_for(:activity_detail_id).each do |message| %>
       <div><%= message %></div>
     <% end %>

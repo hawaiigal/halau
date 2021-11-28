@@ -6,7 +6,7 @@
 
   <% activity_details.each do |activity_detail| %>
     <tr>
-      <td><%= link_to activity_detail.activity, activity_detail%></td>
+      <td><%= link_to activity_detail.name, activity_detail%></td>
       <td><%= activity_detail.hours %></td>
     </tr>
 
