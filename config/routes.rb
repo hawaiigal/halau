@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
-  resources :hour_entries, :activity_details
+  resources :hour_entries, :activity_details, :haumanas
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
