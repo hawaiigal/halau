@@ -4,7 +4,7 @@ class HaumanasController < ApplicationController
   end
 
   def show
-    @haumana = Haumana.find(haumana_params[:id])
+    @haumana = Haumana.find(params[:id])
   end
 
   def new
@@ -12,7 +12,9 @@ class HaumanasController < ApplicationController
   end
 
   def create
-    @haumana = Haumana.new(haumana_params)
+    params = haumana_params
+    params[:seconds_balance] = 0
+    @haumana = Haumana.new(params)
 
     if @haumana.save
       redirect_to action: 'index'
@@ -22,7 +24,7 @@ class HaumanasController < ApplicationController
   end
 
   def edit
-    @haumana = Haumana.find(haumana_params[:id])
+    @haumana = Haumana.find(params[:id])
   end
 
   def update
@@ -44,5 +46,7 @@ class HaumanasController < ApplicationController
 
   private
 
-  def haumana_params; end
+  def haumana_params
+    params.require(:haumana).permit(:name, :seconds_balance)
+  end
 end

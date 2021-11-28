@@ -1,0 +1,16 @@
+<div>
+  <table>
+    <tr>
+      <th>Haumana</th>
+      <th>Hours Balance</th>
+    </tr>
+
+    <% haumanas.each do |haumana| %>
+      <tr>
+        <td><%= link_to haumana.name, haumana%></td>
+        <td><%= haumana.hours_balance %></td>
+      </tr>
+
+    <% end %>
+  </table>
+</div>

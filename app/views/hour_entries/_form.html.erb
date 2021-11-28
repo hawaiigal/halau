@@ -32,6 +32,14 @@
   </div>
 
   <div>
+    <%= form.label :haumana_id %><br>
+    <%= form.select :haumana_id, Haumana.all.collect { |haumana| [haumana.name, haumana.id] } %>
+    <%= @hour_entry.errors.full_messages_for(:haumana_id).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
       <%= form.label :hours %><br>
       <%= form.number_field :hours %>
       <%= @hour_entry.errors.full_messages_for(:hours).each do |message| %>
