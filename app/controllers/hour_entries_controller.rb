@@ -15,6 +15,7 @@ class HourEntriesController < ApplicationController
 
   def new
     @hour_entry = HourEntry.new
+    @haumanas = Haumana.all
   end
 
   def edit
