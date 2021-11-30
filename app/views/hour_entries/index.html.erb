@@ -1,5 +1,7 @@
 <div class="content">
   <%= render partial: "entries", :locals => { :hour_entries => @hour_entries } %>
 
-  <%= button_to "New Entry", new_hour_entry_path, method: :get %>
+  <div>
+    <%= button_to "New Entry", new_hour_entry_path, method: :get %>
+  </div>
 </div>

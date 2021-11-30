@@ -1,70 +1,51 @@
-<%= form_with model: @hour_entry do |form| %>
-  <div>
-      <%= form.label :name %><br>
-      <%= form.text_field :name %>
-      <%= @hour_entry.errors.full_messages_for(:name).each do |message| %>
-          <div><%= message %></div>
-      <% end %>
-  </div>
+<%= form_with model: @hour_entry, class: "entry_form" do |form| %>
 
-  <div>
-      <%= form.label :date %><br>
-      <%= form.datetime_local_field :date %>
-      <%= @hour_entry.errors.full_messages_for(:date).each do |message| %>
-          <div><%= message %></div>
-      <% end %>
-  </div>
-
-  <div>
-    <%= form.label :type_of_entry %><br>
-    <%= form.select :type_of_entry, options_for_select({"Hours Worked" => "hours_worked", "Hours Used" => "hours_used"}) %>
-    <%= @hour_entry.errors.full_messages_for(:type_of_entry).each do |message| %>
-        <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.label :activity_detail_id %><br>
-    <%= form.select :activity_detail_id, ActivityDetail.all.collect {|c| [c.name, c.id]} %>
-    <%= @hour_entry.errors.full_messages_for(:activity_detail_id).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.label :haumana_id %><br>
+    <%= form.label :haumana_id %>
     <%= form.select :haumana_id, Haumana.all.collect { |haumana| [haumana.name, haumana.id] } %>
     <%= @hour_entry.errors.full_messages_for(:haumana_id).each do |message| %>
         <div><%= message %></div>
-    <% end %>
-  </div>
+    <% end unless @hour_entry.errors.full_messages_for(:haumana_id).empty? %>
 
-  <div>
-      <%= form.label :hours %><br>
-      <%= form.number_field :hours %>
-      <%= @hour_entry.errors.full_messages_for(:hours).each do |message| %>
-          <div><%= message %></div>
-      <% end %>
-  </div>
+    <%= form.label :date %>
+    <%= form.date_field :date %>
+    <%= @hour_entry.errors.full_messages_for(:date).each do |message| %>
+        <div><%= message %></div>
+    <% end unless @hour_entry.errors.full_messages_for(:date).empty? %>
 
-  <div>
-      <%= form.label :minutes %><br>
-      <%= form.number_field :minutes %>
-      <%= @hour_entry.errors.full_messages_for(:minutes).each do |message| %>
-          <div><%= message %></div>
-      <% end %>
-  </div>
+    <%= form.label :type_of_entry %>
+    <%= form.select :type_of_entry, options_for_select({"Hours Worked" => "hours_worked", "Hours Used" => "hours_used"}) %>
+    <%= @hour_entry.errors.full_messages_for(:type_of_entry).each do |message| %>
+        <div><%= message %></div>
+    <% end unless @hour_entry.errors.full_messages_for(:type_of_entry).empty? %>
 
-  <div>
-      <%= form.label :notes %><br>
-      <%= form.text_area :notes, cols:40, rows:5 %>
-      <%= @hour_entry.errors.full_messages_for(:notes).each do |message| %>
-          <div><%= message %></div>
-      <% end %>
-  </div>
 
-  <div>
-      <%= form.submit %>
-  </div>
+    <%= form.label :activity_detail_id %>
+    <%= form.select :activity_detail_id, ActivityDetail.all.collect {|c| [c.name, c.id]} %>
+    <%= @hour_entry.errors.full_messages_for(:activity_detail_id).each do |message| %>
+      <div><%= message %></div>
+    <% end unless @hour_entry.errors.full_messages_for(:activity_detail_id).empty? %>
 
+
+    <%= form.label :hours %>
+    <%= form.number_field :hours %>
+    <%= @hour_entry.errors.full_messages_for(:hours).each do |message| %>
+        <div><%= message %></div>
+    <% end unless @hour_entry.errors.full_messages_for(:hours).empty? %>
+
+
+    <%= form.label :minutes %>
+    <%= form.number_field :minutes %>
+    <%= @hour_entry.errors.full_messages_for(:minutes).each do |message| %>
+        <div><%= message %></div>
+    <% end unless @hour_entry.errors.full_messages_for(:minutes).empty? %>
+
+
+    <%= form.label :notes %>
+    <%= form.text_area :notes, cols:40, rows:5 %>
+    <%= @hour_entry.errors.full_messages_for(:notes).each do |message| %>
+        <div><%= message %></div>
+    <% end unless @hour_entry.errors.full_messages_for(:notes).empty? %>
+
+
+    <%= form.submit %>
 <% end %>

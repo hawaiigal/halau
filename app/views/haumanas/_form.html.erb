@@ -1,14 +1,10 @@
-<%= form_with model: haumana do |form| %>
-  <div>
-      <%= form.label :name %><br>
-      <%= form.text_field :name %>
-      <%= haumana.errors.full_messages_for(:name).each do |message| %>
-          <div><%= message %></div>
-      <% end %>
-  </div>
+<%= form_with model: haumana, class:"entry_form" do |form| %>
 
-  <div>
-      <%= form.submit %>
-  </div>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= haumana.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+  <% end unless haumana.errors.full_messages_for(:name).empty? %>
 
+  <%= form.submit %>
 <% end %>

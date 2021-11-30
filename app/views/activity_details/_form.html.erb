@@ -1,22 +1,16 @@
 <%= form_with model: activity_detail do |form| %>
-  <div>
-      <%= form.label :name %><br>
-      <%= form.text_field :name %>
-      <%= activity_detail.errors.full_messages_for(:name).each do |message| %>
-          <div><%= message %></div>
-      <% end %>
-  </div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= activity_detail.errors.full_messages_for(:name).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
 
-  <div>
-      <%= form.label :hours %><br>
-      <%= form.number_field :hours %>
-      <%= activity_detail.errors.full_messages_for(:hours).each do |message| %>
-          <div><%= message %></div>
-      <% end %>
-  </div>
+    <%= form.label :hours %>
+    <%= form.number_field :hours %>
+    <%= activity_detail.errors.full_messages_for(:hours).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
 
-  <div>
-      <%= form.submit %>
-  </div>
+    <%= form.submit %>
 
 <% end %>

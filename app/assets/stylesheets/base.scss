@@ -33,3 +33,23 @@ body {
   font-family: 'Abril Fatface', cursive;
   font-size: 2em;
 }
+
+.content > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.entry_form {
+  margin: 0 auto;
+  width: 50%;
+}
+
+input, select {
+  margin: 0 auto .5rem;
+}
+
+label {
+  display: block;
+  margin-top: .5rem;
+  margin-bottom: .25rem;
+}
