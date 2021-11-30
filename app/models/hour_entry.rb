@@ -2,6 +2,8 @@
 
 class HourEntry < ApplicationRecord
   validates :date, presence: true
+  validates :hours, presence: true
+  validates :minutes, presence: true
 
   enum type_of_entry: %i[hours_worked hours_used]
   belongs_to :activity_detail

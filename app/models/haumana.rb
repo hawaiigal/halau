@@ -9,16 +9,22 @@ class Haumana < ApplicationRecord
   end
 
   def hours_balance
-    remaining = seconds_balance / 60
+    remaining = seconds_balance.abs / 60
 
     return '0 hours' if remaining.zero?
 
-    [[60, :minutes], [24, :hours]].map do |count, name|
+    returnable = [[60, :minutes], [24, :hours]].map do |count, name|
       next unless remaining.positive?
 
       remaining, n = remaining.divmod(count)
 
       "#{n.to_i} #{name}" unless n.to_i.zero?
     end.compact.reverse.join(' ')
+
+    if seconds_balance.negative?
+      "Owes #{returnable}"
+    else
+      returnable
+    end
   end
 end
