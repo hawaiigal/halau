@@ -2,6 +2,12 @@ class Haumana < ApplicationRecord
   validates :name, presence: true
   validates :seconds_balance, presence: true
 
+  def update_balance(hours, minutes, factor)
+    time_diff = (hours * 60 * 60 + minutes * 60) * factor
+
+    update(seconds_balance: seconds_balance + time_diff)
+  end
+
   def hours_balance
     remaining = seconds_balance / 60
 
