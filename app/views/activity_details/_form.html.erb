@@ -1,4 +1,4 @@
-<%= form_with model: activity_detail do |form| %>
+<%= form_with model: activity_detail, class:"entry_form" do |form| %>
     <%= form.label :name %>
     <%= form.text_field :name %>
     <%= activity_detail.errors.full_messages_for(:name).each do |message| %>
